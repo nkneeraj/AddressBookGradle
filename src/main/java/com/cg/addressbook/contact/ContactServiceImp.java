@@ -55,15 +55,15 @@ public class ContactServiceImp implements ContactService {
 	
 	public static String email()
 	{
-		System.out.println("Enter valid email having Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions");
+		System.out.println("Enter valid email having Email");
 		String email = sc.nextLine();
-		Pattern pattern = Pattern.compile("^abc{1}([-+-.]{0,1}[a-zA-z0-9]{3})?@[a-z]{2,}\\.[a-z]{2,4}(\\.[a-z]{2})?$");
+		Pattern pattern = Pattern.compile("^[a-z]+([-+-.]{0,1}[a-zA-z0-9]{1,})?@[a-z]{2,}\\.[a-z]{2,4}(\\.[a-z]{2})?$");
 		Matcher matcher = pattern.matcher(email);
 		if (matcher.find())
 			System.out.println("Valid Entry");
 		else {
-			System.out.println("Invalid entry, Re-enter valid entry:first capital character and min 3 length");
-			firstName();
+			System.out.println("Invalid entry");
+			email();
 		}
 		return email;
 	}	
@@ -76,7 +76,7 @@ public class ContactServiceImp implements ContactService {
 	
 	public static String state()
 	{
-		System.out.println("Enter city");
+		System.out.println("Enter state");
 		String city = sc.nextLine();
 		return city;
 	}
@@ -91,7 +91,7 @@ public class ContactServiceImp implements ContactService {
 			System.out.println("Valid Entry");
 		else {
 			System.out.println("Invalid entry, Re-enter valid entry:country code followed by space and 10 digit number");
-			firstName();
+			phoneNumber();
 		}
 		return phoneNumber;
 	}
