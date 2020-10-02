@@ -16,7 +16,7 @@ public class Contact {
 	}
 	public Contact(String firstName, String lastName, String address, String city, String state,
 			String phoneNumber, String email) {
-		super();
+//		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.address = address;
@@ -81,4 +81,12 @@ public class Contact {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	@Override
+	public String toString() {
+		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
+				+ ", state=" + state + ", phoneNumber=" + phoneNumber + ", email=" + email + "]";
+	}
+	
+	
 }
