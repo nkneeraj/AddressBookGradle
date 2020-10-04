@@ -4,12 +4,14 @@ import com.cg.addressbook.contact.*;
 import java.util.*;
 
 public class Book {
-
-	public void addContact(Contact Contact) {
-		contactList.add(Contact);
-	}
-
+	
 	private List<Contact> contactList = new ArrayList<>();
+//	ContactServiceImp contactService = new ContactServiceImp();
+	Contact contact = new Contact();
+	
+	public void addContact(Contact contact) {
+		contactList.add(contact);
+	}
 
 	public List<Contact> getContactList() {
 		return contactList;
