@@ -17,39 +17,34 @@ public class Main {
 		System.out.println("Welcome to Book");
 		System.out.println("Enter 1 to add contact");
 		System.out.println("Enter 2 to edit contact");
-		System.out.println("Enter 3 to exit");
+		System.out.println("Enter 3 to delete existing contact");
+		System.out.println("Enter 4 to exit");
 
 		int input = sc.nextInt();
 		sc.nextLine();
-		while (input != 3) {
+		while (input != 4) {
 			if (input == 1) {
-				contactService.addContact();
-				System.out.println("Enter 1 to add contact");
-				System.out.println("Enter 2 to edit contact");
-				System.out.println("Enter 3 to exit");
-				input = sc.nextInt();sc.nextLine();
-				} else if (input == 2) {
+				book.addContact();
+			} else if (input == 2) {
 				System.out.println("Enter First Name :");
 				String firstName = sc.nextLine();
-				contactService.updateContact(firstName);
-				System.out.println("Enter 1 to add contact");
-		        System.out.println("Enter 2 to edit contact");
-		        System.out.println("Enter 3 to exit");
-		        input = sc.nextInt();sc.nextLine();
-		        } else
+				book.updateContact(firstName);
+			} else if(input==3) {
+				System.out.println("Enter First Name of contact that need to be deleted.");
+				String firstName = sc.nextLine();
+				book.deleteContact(firstName);
+			}	else if (input ==4) {
 				System.out.println("Exit");
+				break;
+			}
+			else
+			System.out.println("Wrong entry");
+			System.out.println("Enter 1 to add contact");
+			System.out.println("Enter 2 to edit contact");
+			System.out.println("Enter 3 to delete an existing contact");
+			System.out.println("Enter 4 to exit");
+			input = sc.nextInt();
+			sc.nextLine();
 		}
-
-//		System.out.println("Add a new Contact");
-//		ContactServiceImp contact = new ContactServiceImp();
-//	book.addContact(contact.addContact());		
-//		contact.addContact();
-//		System.out.println(contact.getContact());
-//		Contact contact1 = new Contact();
-//		System.out.println(contact1.get);
-//		System.out.println("update contact");
-//		System.out.println("Enter first name:");
-//		String firstName = sc.nextLine();
-//		contact.updateContact(firstName);
 	}
 }

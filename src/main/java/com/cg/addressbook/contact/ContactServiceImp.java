@@ -1,10 +1,11 @@
 package com.cg.addressbook.contact;
-
+import java.util.*;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import com.cg.address.*;
 import com.cg.addressbook.contact.*;
+
 import com.cg.address.book.*;
 
 import com.cg.address.book.Book;
@@ -18,7 +19,7 @@ public class ContactServiceImp implements ContactService {
 	}
 
 	Contact contact = new Contact();
-	Book book = new Book();
+
 
 	public Contact addContact() {
 		contact.setFirstName(firstName());
@@ -27,12 +28,11 @@ public class ContactServiceImp implements ContactService {
 		contact.setCity(city());
 		contact.setState(state());
 		contact.setPhoneNumber(phoneNumber());	
-		book.addContact(contact);
 		return contact;
 	}
 	
-	public void updateContact(String firstName) {
-		for (Contact contact : book.getContactList()) {
+	public void updateContact(String firstName, List<Contact> contactList) {
+		for (Contact contact : contactList) {
 			if (contact.getFirstName().equalsIgnoreCase(firstName)) {
 				int i = 1;
 				while (i != 0) {
