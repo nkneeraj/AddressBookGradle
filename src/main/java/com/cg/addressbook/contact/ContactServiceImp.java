@@ -20,15 +20,15 @@ public class ContactServiceImp implements ContactService {
 	Contact contact = new Contact();
 	Book book = new Book();
 
-	public void addContact() {
+	public Contact addContact() {
 		contact.setFirstName(firstName());
 		contact.setLastName(lastName());
 		contact.setEmail(email());
 		contact.setCity(city());
 		contact.setState(state());
-		contact.setPhoneNumber(phoneNumber());
-//		return contact;
+		contact.setPhoneNumber(phoneNumber());	
 		book.addContact(contact);
+		return contact;
 	}
 	
 	public void updateContact(String firstName) {
@@ -42,7 +42,7 @@ public class ContactServiceImp implements ContactService {
 					System.out.println("Enter 4 to update the state");
 					System.out.println("Enter 5 to update the phone number");
 					System.out.println("Enter 6 to update the email");
-					System.out.println("Enter 0 to exit");
+					System.out.println("Enter 7 to exit");
 					i = sc.nextInt();
 					sc.nextLine();
 					switch (i) {
@@ -77,7 +77,7 @@ public class ContactServiceImp implements ContactService {
 						System.out.println("email updated");
 						break;
 					case 7:
-						System.out.println("Exit");
+						System.out.println("Updated Successully");
 						break;
 					default:
 						System.out.println("Invalid Entry! Enter a new one");
