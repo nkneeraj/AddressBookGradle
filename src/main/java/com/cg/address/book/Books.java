@@ -27,7 +27,7 @@ public class Books {
 			int input = sc.nextInt();
 			sc.nextLine();
 			while (input != 4) {
-				if (input == 1) {
+				if (input == 1) {			
 					book.addContact();
 				} else if (input == 2) {
 					System.out.println("Enter First Name :");
