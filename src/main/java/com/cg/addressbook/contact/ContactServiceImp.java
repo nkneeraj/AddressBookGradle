@@ -22,6 +22,7 @@ public class ContactServiceImp implements ContactService {
 
 
 	public Contact addContact(Book book) {
+		Contact contact = new Contact();
 		contact.setFirstName(firstName());
 		contact.setLastName(lastName());
 		contact.setEmail(email());
@@ -30,6 +31,7 @@ public class ContactServiceImp implements ContactService {
 		contact.setPhoneNumber(phoneNumber());	
 		return contact;
 	}
+	
 	
 	public void updateContact(String firstName, Book book) {
 		List<Contact> contactList = book.getContactList();
