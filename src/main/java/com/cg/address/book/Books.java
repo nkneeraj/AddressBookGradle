@@ -1,25 +1,32 @@
 package com.cg.address.book;
 
 import java.util.*;
+import java.util.stream.Collectors;
+
+import com.cg.addressbook.contact.Contact;
 
 public class Books {
 	private Scanner sc = new Scanner(System.in);
-
+	Book book = new Book();
 	Map<String, Book> books = new HashMap<>();
 
 	public Books() {
 		books = new HashMap<>();
 	}
 
-	public void searchByCityAndState(String city, String state) {
-
-		books.entrySet().stream().forEach(e -> {
-			e.getValue().getContactList().stream().forEach(x -> {
-				if (x.getCity().equalsIgnoreCase(city) || x.getState().equalsIgnoreCase(state)) {
-					System.out.println(x.getFirstName() + " " + x.getLastName());
-				}
-			});
-		});
+//	public void searchByCityAndState(String city, String state) {
+//
+//		books.entrySet().stream().forEach(e -> {
+//			e.getValue().getContactList().stream().forEach(x -> {
+//				if (x.getCity().equalsIgnoreCase(city) || x.getState().equalsIgnoreCase(state)) {
+//					System.out.println(x.getFirstName() + " " + x.getLastName());
+//				}
+//			});
+//		});
+//	}
+	
+	public List<Contact> searchPersonsByCity(String city) {
+		return book.getContactList().stream().filter(person -> person.getCity().equals(city)).collect(Collectors.toList());
 	}
 
 	public void openBook() {
