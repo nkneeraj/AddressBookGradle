@@ -27,21 +27,29 @@ public class Books {
 		});
 	}
 
-//	public void countByCity(String city) {
-//		books.entrySet().stream().forEach(e -> {
-//			e.getValue().getContactList().stream().forEach(x -> {
-//				if (cityCount.containsKey(x.getCity())) {
-//					Integer cityCount1 = cityCount.get(x.getCity());
-//					cityCount1++;
-//					cityCount.replace(x.getCity(), cityCount1);
-//				} else if (!cityCount.containsKey(x.getCity())) {
-//					cityCount.put(x.getCity(), 1);
-//				}
-//			});
-//		});
-//
-//		cityCount.entrySet().stream().forEach(n -> System.out.println(n));
-//	}
+	public void countByCity(String city, String state) {
+		books.entrySet().stream().forEach(e -> {
+			e.getValue().getContactList().stream().forEach(x -> {
+				if (cityCount.containsKey(x.getCity())) {
+					Integer cityCount1 = cityCount.get(x.getCity());
+					cityCount1++;
+					cityCount.replace(x.getCity(), cityCount1);
+				} else if (!cityCount.containsKey(x.getCity())) {
+					cityCount.put(x.getCity(), 1);
+				}
+				else if (stateCount.containsKey(x.getCity())) {
+					Integer stateCount1 = stateCount.get(x.getCity());
+					stateCount1++;
+					stateCount.replace(x.getCity(), stateCount1);
+				} else if (!stateCount.containsKey(x.getCity())) {
+					stateCount.put(x.getCity(), 1);
+				}
+			});
+		});
+
+		cityCount.entrySet().stream().forEach(n -> System.out.println(n));
+		stateCount.entrySet().stream().forEach(n -> System.out.println(n));
+	}
 
 	public void viewByCityOrState(String city, String state) {
 		books.entrySet().stream().forEach(e -> {

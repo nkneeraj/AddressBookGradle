@@ -37,7 +37,7 @@ public class Main {
 				String city = sc.nextLine();
 				System.out.println("Enter state name: ");
 				String state = sc.nextLine();
-				books.searchByCityAndState(city, state);
+				books.countByCity(city,state);
 			} else if (input == 4) {
 				System.out.println("Exit");
 				break;
@@ -45,7 +45,7 @@ public class Main {
 				System.out.println("Wrong entry");
 				System.out.println("Enter 1 to Create AddressBook");
 				System.out.println("Enter 2 to open existing AddressBook");
-				System.out.println("Enter 3 search by city and state");
+				System.out.println("Enter 3 count of person by city and state");
 				System.out.println("Enter 4 to exit");		
 		}
 	}
