@@ -28,11 +28,11 @@ public class Books {
 			sc.nextLine();
 			while (input != 4) {
 				if (input == 1) {			
-					book.addContact();
+					book.addContact(book);
 				} else if (input == 2) {
 					System.out.println("Enter First Name :");
 					String firstName = sc.nextLine();
-					book.updateContact(firstName);
+					book.updateContact(firstName,book);
 				} else if (input == 3) {
 					System.out.println("Enter First Name of contact that need to be deleted.");
 					String firstName = sc.nextLine();

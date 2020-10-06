@@ -21,7 +21,7 @@ public class ContactServiceImp implements ContactService {
 	Contact contact = new Contact();
 
 
-	public Contact addContact() {
+	public Contact addContact(Book book) {
 		contact.setFirstName(firstName());
 		contact.setLastName(lastName());
 		contact.setEmail(email());
@@ -31,7 +31,8 @@ public class ContactServiceImp implements ContactService {
 		return contact;
 	}
 	
-	public void updateContact(String firstName, List<Contact> contactList) {
+	public void updateContact(String firstName, Book book) {
+		List<Contact> contactList = book.getContactList();
 		for (Contact contact : contactList) {
 			if (contact.getFirstName().equalsIgnoreCase(firstName)) {
 				int i = 1;
