@@ -6,6 +6,11 @@ public class Books {
 	private Scanner sc = new Scanner(System.in);
 
 	Map<String, Book> books = new HashMap<>();
+	Map<String, ArrayList<String>> City = new HashMap<>();
+	Map<String, ArrayList<String>> State = new HashMap<>();
+
+	Map<String, Integer> cityCount = new HashMap<>();
+	Map<String, Integer> stateCount = new HashMap<>();
 
 	public Books() {
 		books = new HashMap<>();
@@ -13,13 +18,62 @@ public class Books {
 
 	public void searchByCityAndState(String city, String state) {
 
-		books.entrySet().stream().forEach(e -> {
-			e.getValue().getContactList().stream().forEach(x -> {
+		books.entrySet().stream().forEach(n -> {
+			n.getValue().getContactList().stream().forEach(x -> {
 				if (x.getCity().equalsIgnoreCase(city) || x.getState().equalsIgnoreCase(state)) {
 					System.out.println(x.getFirstName() + " " + x.getLastName());
 				}
 			});
 		});
+	}
+
+//	public void countByCity(String city) {
+//		books.entrySet().stream().forEach(e -> {
+//			e.getValue().getContactList().stream().forEach(x -> {
+//				if (cityCount.containsKey(x.getCity())) {
+//					Integer cityCount1 = cityCount.get(x.getCity());
+//					cityCount1++;
+//					cityCount.replace(x.getCity(), cityCount1);
+//				} else if (!cityCount.containsKey(x.getCity())) {
+//					cityCount.put(x.getCity(), 1);
+//				}
+//			});
+//		});
+//
+//		cityCount.entrySet().stream().forEach(n -> System.out.println(n));
+//	}
+
+	public void viewByCityOrState(String city, String state) {
+		books.entrySet().stream().forEach(e -> {
+			e.getValue().getContactList().stream().forEach(x -> {
+				if (City.containsKey(x.getCity())) {
+					ArrayList<String> list = City.get(x.getCity());
+					list.add(x.getFirstName() + " " + x.getLastName());
+					City.replace(x.getCity(), list);
+				} else if (!City.containsKey(x.getCity())) {
+					ArrayList<String> list = new ArrayList<>();
+					list.add(x.getFirstName() + " " + x.getLastName());
+					City.put(x.getCity(), list);
+				} else if (State.containsKey(x.getState())) {
+					ArrayList<String> list = City.get(x.getState());
+					list.add(x.getFirstName() + " " + x.getLastName());
+					City.replace(x.getState(), list);
+				} else if (!State.containsKey(x.getState())) {
+					ArrayList<String> list = new ArrayList<>();
+					list.add(x.getFirstName() + " " + x.getLastName());
+					City.put(x.getState(), list);
+				}
+			});
+		});
+
+		City.entrySet().stream().forEach(x -> {
+			x.getValue().stream().forEach(n -> System.out.println(n));
+		});
+
+		State.entrySet().stream().forEach(x -> {
+			x.getValue().stream().forEach(n -> System.out.println(n));
+		});
+
 	}
 
 	public void openBook() {

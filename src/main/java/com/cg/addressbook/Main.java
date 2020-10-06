@@ -43,8 +43,8 @@ public class Main {
 				break;
 			}
 				System.out.println("Wrong entry");
-				System.out.println("Enter 1 to open existing AddressBook");
-				System.out.println("Enter 2 to create new AddressBook");
+				System.out.println("Enter 1 to Create AddressBook");
+				System.out.println("Enter 2 to open existing AddressBook");
 				System.out.println("Enter 3 search by city and state");
 				System.out.println("Enter 4 to exit");		
 		}
