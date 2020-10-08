@@ -49,6 +49,15 @@ public class Books {
 	public List<Contact> showContact(){
 		return book.getContactList().stream().sorted((n1, n2) -> n1.getFirstName().compareTo(n2.getFirstName())).collect(Collectors.toList());
 	}
+	
+	public List<Contact> sortCity(){
+		return book.getContactList().stream().sorted((n1,n2) -> n1.getCity().compareTo(n2.getCity())).collect(Collectors.toList());
+	}
+	
+	public List<Contact> sortState(){
+		return book.getContactList().stream().sorted((n1,n2) -> n1.getState().compareTo(n2.getState())).collect(Collectors.toList());
+	}
+	
 //	public void countByCity(String city, String state) {
 //		books.entrySet().stream().forEach(e -> {
 //			e.getValue().getContactList().stream().forEach(x -> {

@@ -23,7 +23,9 @@ public class Main {
 		System.out.println("Enter 5 to get count of person by city");
 		System.out.println("Enter 6 to get count of person by state");
 		System.out.println("Enter 7 to sort person's name by alphabet");
-		System.out.println("Enter 8 to exit");
+		System.out.println("Enter 8 to sort by city");
+		System.out.println("Enter 9 to sort by state");
+		System.out.println("Enter 10 to exit");
 
 		for (;;) {
 			int input = sc.nextInt();
@@ -53,6 +55,13 @@ public class Main {
 			}else if (input == 8) {
 				System.out.println("Exit");
 				break;
+			}else if(input ==9)
+			{
+				System.out.println(books.sortCity());
+			}
+			else if(input==10)
+			{
+				System.out.println(books.sortState());
 			}
 			else {
 				System.out.println("Wrong entry");
@@ -64,7 +73,9 @@ public class Main {
 			System.out.println("Enter 5 to get count of person by city");
 			System.out.println("Enter 6 to get count of person by state");
 			System.out.println("Enter 7 to sort person's name by alphabet");
-			System.out.println("Enter 8 to exit");
+			System.out.println("Enter 8 to sort by city");
+			System.out.println("Enter 9 to sort by state");
+			System.out.println("Enter 10 to exit");
 		}
 	}
 }
