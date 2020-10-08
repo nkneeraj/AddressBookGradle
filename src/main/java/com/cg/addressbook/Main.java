@@ -22,7 +22,8 @@ public class Main {
 		System.out.println("Enter 4 to search by state");
 		System.out.println("Enter 5 to get count of person by city");
 		System.out.println("Enter 6 to get count of person by state");
-		System.out.println("Enter 7 to exit");
+		System.out.println("Enter 7 to sort person's name by alphabet");
+		System.out.println("Enter 8 to exit");
 
 		for (;;) {
 			int input = sc.nextInt();
@@ -47,7 +48,9 @@ public class Main {
 				System.out.println("Enter State Name: ");
 				String state = sc.nextLine();
 				System.out.println(books.countPersonsByState(state));
-			}else if (input == 7) {
+			}else if(input==7){
+				System.out.println(books.showContact());
+			}else if (input == 8) {
 				System.out.println("Exit");
 				break;
 			}
@@ -60,7 +63,8 @@ public class Main {
 			System.out.println("Enter 4 to search by state");
 			System.out.println("Enter 5 to get count of person by city");
 			System.out.println("Enter 6 to get count of person by state");
-			System.out.println("Enter 7 to exit");
+			System.out.println("Enter 7 to sort person's name by alphabet");
+			System.out.println("Enter 8 to exit");
 		}
 	}
 }
