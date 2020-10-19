@@ -12,6 +12,13 @@ import java.util.List;
 
 import com.cg.address.book.Book;
 import com.cg.addressbook.contact.Contact;
+import com.opencsv.CSVWriter;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.opencsv.bean.StatefulBeanToCsv;
+import com.opencsv.bean.StatefulBeanToCsvBuilder;
+import com.opencsv.exceptions.CsvDataTypeMismatchException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
 public class JsonIO {
 	public static List<Contact> readCSV(Path p) {
@@ -35,7 +42,7 @@ public class JsonIO {
 		try {
 			Writer writer = Files
 					.newBufferedWriter(Paths.get("G:\\Training\\Gradle1\\AddressBookProject\\com.cg.adp\\AB4.csv"));
-			StatefulBeanToCsv<Contact> beanToCsv = new StatefulBeanToCsvBuilder<PersonContact>(writer)
+			StatefulBeanToCsv<Contact> beanToCsv = new StatefulBeanToCsvBuilder<Contact>(writer)
 					.withQuotechar(CSVWriter.NO_QUOTE_CHARACTER).build();
 			beanToCsv.write(addressBook.getAddressBook());
 			writer.close();
