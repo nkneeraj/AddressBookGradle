@@ -20,7 +20,7 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 
-public class JsonIO {
+public class CSV {
 	public static List<Contact> readCSV(Path p) {
 		List<Contact> CsvLIST = new ArrayList<>();
 		try {
